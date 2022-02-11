@@ -57,17 +57,17 @@ def encrypt_modification(writer_obj: PdfFileWriter, user_pwd, owner_pwd=None, us
 #encrypt(writer, '1', '123')
 
 def read_and_encrypt(pdf_inputfile,pdf_outfile,secure_file=False,usrpwd=None,ownrpwd=None):
-    print('1')
-    print(pdf_inputfile)
+    #print('1')
+    #print(pdf_inputfile)
     pdf = PdfFileReader(pdf_inputfile)
-    print('2')
+    #print('2')
     pdf_writer = PdfFileWriter()
-    print('3')
+    #print('3')
     for page in range(pdf.getNumPages()):
         pdfpage = pdf.getPage(page)
         pdf_writer.addPage(pdfpage)
     
-    print('4')
+    #print('4')
 
     with open(pdf_outfile, 'wb') as out:
         if secure_file: 
@@ -75,7 +75,7 @@ def read_and_encrypt(pdf_inputfile,pdf_outfile,secure_file=False,usrpwd=None,own
             encrypt_modification(pdf_writer, usrpwd, ownrpwd, use_128bit=True)
         pdf_writer.write(out)
 
-    print('5')
+    #print('5')
 
     return 0
 """
