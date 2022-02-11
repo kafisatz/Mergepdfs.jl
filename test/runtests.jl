@@ -13,11 +13,14 @@ fi2 = joinpath(datafld,"2.pdf")
 tmpfld = mktempdir()
 @assert isdir(tmpfld)
 
-intermediatePdfFile = joinpath(tmpfld,"intermediate.pdf")
-outputPdfFile = joinpath(tmpfld,"res.pdf")
 
 list_of_pdf_files = joinpath.(datafld,["1.pdf","2.pdF","3.PDF","4.pDf"])
 @assert all(isfile.(list_of_pdf_files))
+
+@testset "Smoke Tests" begin
+
+intermediatePdfFile = joinpath(tmpfld,"intermediate.pdf")
+outputPdfFile = joinpath(tmpfld,"res.pdf")
 
 ##################################################################
 #merging pdf files
@@ -63,6 +66,4 @@ isfile(outputPdfFile) && rm(outputPdfFile)
     read_and_encrypt_jl(intermediatePdfFile,outputPdfFile,true,"","ownr")
 @test isfile(outputPdfFile)
 
-
-
-
+end
