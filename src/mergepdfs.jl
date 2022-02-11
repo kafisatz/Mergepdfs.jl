@@ -24,15 +24,11 @@ catch
     end
 end
 
-
 function __init__()
 	copy!(pyModulePyPDF2, PyCall.pyimport("PyPDF2"))
     
-    if isinteractive()
-        include("src/py_snippted.jl")
-    else 
-        include("py_snippted.jl")
-    end
+    snippetfi = first(filter(isfile,["src/py_snippet.jl","../py_snippet.jl","../src/py_snippet.jl","py_snippet.jl"]))
+    include(snippetfi)
 end
 
 function mergepdfs(list_of_pdf_files,resfi)
@@ -57,7 +53,6 @@ end
 
 export read_and_encrypt_jl
 function read_and_encrypt_jl(pdf_inputfile,pdf_outfile,secure_file=false,usrpwd="",ownrpwd="")
-    println("mih")
     return py"read_and_encrypt"(pdf_inputfile,pdf_outfile,secure_file=secure_file,usrpwd=usrpwd,ownrpwd=ownrpwd)
 end
 

@@ -28,9 +28,9 @@ merger.close()
 #pwd()
 #cd(raw"C:\temp\mergepdfs.jl\mergepdfs\src")
 if isinteractive()
-    include("src/py_snippted.jl")
+    include("src/py_snippet.jl")
 else 
-    include("py_snippted.jl")
+    include("py_snippet.jl")
 end
 
 @assert isfile(intermediatePdfFile)
