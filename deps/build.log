@@ -1,0 +1,13 @@
+Found existing installation: PyPDF2 1.28.4
+Uninstalling PyPDF2-1.28.4:
+  Successfully uninstalled PyPDF2-1.28.4
+Collecting PyPDF2==1.27.9
+  Downloading PyPDF2-1.27.9-py3-none-any.whl (71 kB)
+     ---------------------------------------- 71.1/71.1 kB 3.8 MB/s eta 0:00:00
+Installing collected packages: PyPDF2
+Successfully installed PyPDF2-1.27.9
+    Building Conda ─→ `C:\Users\bernhard.konig\.julia\scratchspaces\44cfe95a-1eb2-52ea-b672-e2afdf69b78f\6e47d11ea2776bc5627421d59cdcc1296c058071\build.log`
+    Building PyCall → `C:\Users\bernhard.konig\.julia\scratchspaces\44cfe95a-1eb2-52ea-b672-e2afdf69b78f\1fc929f47d7c151c839c5fc1375929766fb8edcc\build.log`
+    Building Conda → `C:\Users\bernhard.konig\.julia\scratchspaces\44cfe95a-1eb2-52ea-b672-e2afdf69b78f\6e47d11ea2776bc5627421d59cdcc1296c058071\build.log`
+┌ Warning: Removing PyPDF package and installing version 1.27.9
+└ @ Main C:\Users\bernhard.konig\Documents\Repositories\Mergepdfs.jl\deps\build.jl:12
