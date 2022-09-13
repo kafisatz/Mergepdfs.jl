@@ -1,6 +1,5 @@
 
 function __init__()
-    
     try
 	    copy!(pyModulePyPDF2, PyCall.pyimport("PyPDF2"))
     catch e 
@@ -12,7 +11,17 @@ function __init__()
         end
     end
 
-    py"""
+py"""
+import pkg_resources
+vv = pkg_resources.get_distribution("PyPDF2").version
+print(f"Mergepdfs: PyPDF2 version is: {vv}. We expect 1.27.9")
+
+#print(vv)
+assert "1.27.9" == vv, f"PyPDF2 is not equal to 1.27.9, got: {vv}"
+
+import pkg_resources
+pkg_resources.require("PyPDF2==1.27.9")
+
 from PyPDF2 import PdfFileMerger
 from PyPDF2 import PdfFileReader
 from PyPDF2 import PdfFileWriter
@@ -43,6 +52,7 @@ def encrypt_modification(writer_obj: PdfFileWriter, user_pwd, owner_pwd=None, us
         V = 1
         rev = 2
         keylen = int(40 / 8)
+
     # permit copy and printing only:
     P = -44
     O = ByteStringObject(_alg33(owner_pwd, user_pwd, rev, keylen))
