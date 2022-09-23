@@ -1,7 +1,7 @@
 name = "Mergepdfs"
 uuid = "fde602d6-fcbd-459c-a2e5-82155ef95e7c"
 authors = ["Bernhard König <github@diro.ch>"]
-version = "0.1.7"
+version = "0.1.9"
 
 [deps]
 Conda = "8f4d0f93-b110-5947-807f-2305c1781a2d"
