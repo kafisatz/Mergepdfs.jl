@@ -14,9 +14,14 @@ function __init__()
 py"""
 import pkg_resources
 vv = pkg_resources.get_distribution("PyPDF2").version
-print(f"Mergepdfs: PyPDF2 version is: {vv}. We expect 1.27.9")
+#print(f"Mergepdfs: PyPDF2 version is: {vv}. We expect 1.27.9")
 
 #print(vv)
+if "1.27.9" != vv:
+    print(f"ERROR - Mergepdfs: PyPDF2 version is: {vv}. We expect 1.27.9")
+    print('Consider this snippet:')
+    print('ENV["PYTHON"]=raw"c:\Python310\python.exe"; using Pkg; Pkg.build("PyCall");Pkg.build("Mergepdfs");')
+
 assert "1.27.9" == vv, f"PyPDF2 is not equal to 1.27.9, got: {vv}"
 
 import pkg_resources
