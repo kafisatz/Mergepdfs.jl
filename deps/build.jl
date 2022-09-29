@@ -14,6 +14,7 @@ try
     #https://anaconda.org/conda-forge/pypdf2
     run(`pip uninstall PyPDF2 -y`)
     run(`pip install PyPDF2==$pypdf_version`)
+    #pip install PyPDF2==1.27.9
 
     try 
         #this line may trigger installation
