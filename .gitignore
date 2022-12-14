@@ -6,3 +6,4 @@ docs/site/
 Manifest.toml
 .DS_Store
 .vscode
+deps/build.log
