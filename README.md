@@ -7,6 +7,7 @@
 ![Lifecycle](https://img.shields.io/badge/lifecycle-archived-red.svg)
 ![Lifecycle](https://img.shields.io/badge/lifecycle-dormant-blue.svg) -->
 [![CI Testing](https://github.com/kafisatz/Mergepdfs.jl/workflows/CI/badge.svg)](https://github.com/kafisatz/Mergepdfs.jl/actions?query=workflow%3ACI+branch%3Amain)
+[![codecov.io](http://codecov.io/github/kafisatz/Mergepdfs.jl/coverage.svg?branch=master)](http://codecov.io/github/kafisatz/Mergepdfs.jl?branch=master)
 
 Merging and encrypting pdf files (using conda-forge/PyPDF2)
 See runtests.jl for examples
