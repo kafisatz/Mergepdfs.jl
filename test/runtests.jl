@@ -14,7 +14,7 @@ fi2 = joinpath(datafld,"2.pdf")
 tmpfld = mktempdir()
 @assert isdir(tmpfld)
 
-list_of_pdf_files = joinpath.(datafld,["1.pdf","2.pdF","3.PDF","4.pDf"])
+list_of_pdf_files = joinpath.(datafld,["1.pdf","2.pdf","3.pdf","4.pdf"])
 @assert all(isfile.(list_of_pdf_files))
 
 @testset "Smoke Tests" begin
