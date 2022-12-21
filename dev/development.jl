@@ -53,8 +53,6 @@ pdf_writer.write(outputstream)
 outputstream.close()
 
 
-
-
 pdf_writer.close()
 
 fh = open(outputPdfFile)
@@ -63,19 +61,6 @@ close(fh)
     
 
 pdfdoc.encrypt("mi", owner_pwd="", use_128bit = false)
-
-
-
-
-
-
-for item in os.listdir(source_dir):
-    if item.endswith('pdf'):
-        #print(item)
-        merger.append(source_dir + item)
-
-merger.write(source_dir + 'Output/Complete.pdf')       
-merger.close()
 
 
 """import os
