@@ -20,7 +20,7 @@ list_of_pdf_files = joinpath.(datafld,["1.pdf","2.pdf","3.pdf","4.pdf"])
 @testset "Smoke Tests" begin
 
 #if this is equal, initialiation failed
-@test pyModulePyPDF2 != PyCall.PyNULL 
+@test pyModulePyPDF2 != PyCall.PyNULL
     
 intermediatePdfFile = joinpath(tmpfld,"intermediate.pdf")
 outputPdfFile = joinpath(tmpfld,"res.pdf")
