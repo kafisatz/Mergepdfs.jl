@@ -32,10 +32,9 @@ function mergepdfs(list_of_pdf_files,resfi)
     return nothing    
 end
 
-
 export read_and_encrypt_jl
 function read_and_encrypt_jl(pdf_inputfile,pdf_outfile,secure_file=false,usrpwd="",ownrpwd="")
     return py"read_and_encrypt"(pdf_inputfile,pdf_outfile,secure_file=secure_file,usrpwd=usrpwd,ownrpwd=ownrpwd)
 end
 
-end #module 
+end #module
