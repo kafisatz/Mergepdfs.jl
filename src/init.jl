@@ -4,7 +4,7 @@ function __init__()
 	    copy!(pyModulePyPDF2, PyCall.pyimport("PyPDF2"))
     catch e 
         @show e
-        try 
+        try  
             copy!(pyModulePyPDF2, PyCall.pyimport_conda("PdfFileMerger","PyPDF2","conda-forge"))
         catch f
             @show f 
