@@ -3,7 +3,7 @@
 *.jl.mem
 docs/build/
 docs/site/
-Manifest.toml
+#Manifest.toml
 .DS_Store
 .vscode
 deps/build.log
