@@ -18,11 +18,14 @@ try
 
     try 
         #this line may trigger installation
-        copy!(pyModulePyPDF2, PyCall.pyimport("PyPDF2"))    
+        #Conda.add("PyPDF2==1.27.9",channel="conda-forge")
+        Conda.pip("install", "PyPDF2==1.27.9")
+        copy!(pyModulePyPDF2, PyCall.pyimport("PyPDF2"))
     catch e 
         @show e 
         try 
-            copy!(pyModulePyPDF2, PyCall.pyimport_conda("PdfFileMerger","PyPDF2","conda-forge"))
+            copy!(pyModulePyPDF2, PyCall.pyimport_conda("PyPDF2","PyPDF2","conda-forge"))
+            #copy!(pyModulePyPDF2, PyCall.pyimport_conda("PdfFileMerger","PyPDF2","conda-forge"))
         catch e 
             @show e 
         end    
