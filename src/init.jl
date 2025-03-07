@@ -1,3 +1,6 @@
+#=
+    ENV["PYTHON"] =raw"c:\Python313\python.exe"; using Pkg; Pkg.build("PyCall");
+=#
 
 function __init__()
     try
@@ -5,17 +8,18 @@ function __init__()
     catch e 
         @show e
         try  
-            copy!(pyModulePyPDF2, PyCall.pyimport_conda("PdfFileMerger","PyPDF2","conda-forge"))
+            #copy!(pyModulePyPDF2, PyCall.pyimport_conda("PdfFileMerger","PyPDF2","conda-forge"))
+            copy!(pyModulePyPDF2, PyCall.pyimport_conda("PyPDF2","PyPDF2","conda-forge"))
         catch f
             @show f 
         end
     end
 
 py"""
-import pkg_resources
-vv = pkg_resources.get_distribution("PyPDF2").version
-print(f"Mergepdfs - Check is OK: PyPDF2 version is: {vv}. We expect 1.27.9")
-
+#import pkg_resources
+#vv = pkg_resources.get_distribution("PyPDF2").version
+import PyPDF2 as pdtmp
+vv = pdtmp.__version__
 #print(vv)
 if "1.27.9" != vv:
     print(f"Mergepdfs - ERROR: PyPDF2 version is: {vv}. We expect 1.27.9")
@@ -24,8 +28,10 @@ if "1.27.9" != vv:
 
 assert "1.27.9" == vv, f"PyPDF2 is not equal to 1.27.9, got: {vv}"
 
-import pkg_resources
-pkg_resources.require("PyPDF2==1.27.9")
+#import pkg_resources
+#pkg_resources.require("PyPDF2==1.27.9")
+assert '1.27.9' == vv
+print(f"Mergepdfs - Check is OK: PyPDF2 version is: {vv}. We expect 1.27.9")
 
 from PyPDF2 import PdfFileMerger
 from PyPDF2 import PdfFileReader
